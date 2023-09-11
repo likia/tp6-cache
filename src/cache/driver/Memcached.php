@@ -103,7 +103,7 @@ class Memcached extends Driver
      * @param mixed  $default 默认值
      * @return mixed
      */
-    public function get(string $name, $default = null)
+    public function get(string $name, mixed $default = null): mixed
     {
         $this->readTimes++;
 
