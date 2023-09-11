@@ -108,7 +108,7 @@ class Cache extends Manager implements CacheInterface
      * @param mixed $default 默认值
      * @return mixed
      */
-    public function get(string $key, mixed $default = null)
+    public function get(string $key, mixed $default = null): mixed
     {
         return $this->store()->get($key, $default);
     }
