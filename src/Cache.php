@@ -108,7 +108,7 @@ class Cache extends Manager implements CacheInterface
      * @param mixed $default 默认值
      * @return mixed
      */
-    public function get(string $key, $default = null)
+    public function get(string $key, mixed $default = null)
     {
         return $this->store()->get($key, $default);
     }
@@ -121,7 +121,7 @@ class Cache extends Manager implements CacheInterface
      * @param int|\DateTime $ttl 有效时间 0为永久
      * @return bool
      */
-    public function set(string $key, mixed $value, $ttl = null): bool
+    public function set(string $key, mixed $value, null|int|\DateInterval $ttl = null): bool
     {
         return $this->store()->set($key, $value, $ttl);
     }
@@ -145,7 +145,7 @@ class Cache extends Manager implements CacheInterface
      * @return iterable
      * @throws InvalidArgumentException
      */
-    public function getMultiple(iterable $keys, $default = null): iterable
+    public function getMultiple(iterable $keys, mixed $default = null): iterable
     {
         return $this->store()->getMultiple($keys, $default);
     }
@@ -157,7 +157,7 @@ class Cache extends Manager implements CacheInterface
      * @param null|int|\DateInterval $ttl 有效时间 0为永久
      * @return bool
      */
-    public function setMultiple(iterable $values, $ttl = null): bool
+    public function setMultiple(iterable $values, null|int|\DateInterval $ttl = null): bool
     {
         return $this->store()->setMultiple($values, $ttl);
     }
