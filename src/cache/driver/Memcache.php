@@ -106,7 +106,7 @@ class Memcache extends Driver
      * @param int|\DateTime $expire 有效时间（秒）
      * @return bool
      */
-    public function set(string $name, $value, $expire = null): bool
+    public function set(string $name, mixed $value, null|int|\DateInterval $expire = null): bool
     {
         $this->writeTimes++;
 
