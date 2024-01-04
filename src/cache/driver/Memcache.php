@@ -132,7 +132,7 @@ class Memcache extends Driver
      * @param int $step 步长
      * @return false|int
      */
-    public function inc(string $name, int $step = 1)
+    public function inc( $name,  $step = 1)
     {
         $this->writeTimes++;
 
@@ -152,7 +152,7 @@ class Memcache extends Driver
      * @param int $step 步长
      * @return false|int
      */
-    public function dec(string $name, int $step = 1)
+    public function dec( $name,  $step = 1)
     {
         $this->writeTimes++;
 
@@ -199,7 +199,7 @@ class Memcache extends Driver
      * @param array $keys 缓存标识列表
      * @return void
      */
-    public function clearTag(array $keys): void
+    public function clearTag( $keys): void
     {
         foreach ($keys as $key) {
             $this->handler->delete($key);

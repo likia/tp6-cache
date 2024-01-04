@@ -94,7 +94,7 @@ abstract class Driver implements CacheInterface, CacheHandlerInterface
      * @param string $name 缓存变量名
      * @return mixed
      */
-    public function pull(string $name)
+    public function pull($name)
     {
         $result = $this->get($name, false);
 
@@ -150,7 +150,7 @@ abstract class Driver implements CacheInterface, CacheHandlerInterface
      * @param int    $expire 有效时间 0为永久
      * @return mixed
      */
-    public function remember(string $name, $value, $expire = null)
+    public function remember($name, $value, $expire = null)
     {
         if ($this->has($name)) {
             return $this->get($name);
